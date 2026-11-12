@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#faf8f3">
+  <title>Tumour Reach — Human evidence for bacterial cancer therapies</title>
+  <meta name="description" content="See whether bacterial therapies reached human tumours across seven studies. Compare tissue tests, patient counts and dose-limiting side effects.">
+  <meta property="og:title" content="Tumour Reach | Did the bacteria reach the tumour?">
+  <meta property="og:description" content="Seven human studies. See who was sampled, what was found and which side effects limited treatment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rounakdas07.github.io/tumour-reach/">
+  <meta property="og:image" content="https://rounakdas07.github.io/tumour-reach/preview.png">
+  <meta property="og:image:alt" content="Tumour Reach. In one IV study, live bacteria grew from tumour samples in three of eighteen sampled patients.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./mark.svg" type="image/svg+xml">
+  <link rel="preload" href="./fonts/dm-sans.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#explore">Skip to study</a>
+  <header class="mast"><div class="wrap mast-inner"><a class="brand" href="./"><img src="./mark.svg" width="34" height="34" alt="">Tumour Reach</a><a class="mast-link" href="#sources">About the evidence <span aria-hidden="true">↓</span></a></div></header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">Did the bacteria reach <span>the tumour?</span></h1>
+      <p>Explore seven human cancer studies. See who had a tumour sample, what the researchers found and which side effects limited dosing.</p>
+    </section>
+    <section id="explore" aria-label="Study explorer">
+      <div class="toolbar">
+        <div class="pick"><label for="study">Study</label><div class="select-wrap"><select id="study"></select></div></div>
+        <button id="compare" type="button" class="outline" aria-pressed="false" aria-controls="comparison"><span aria-hidden="true">⇄</span><span id="compare-text">Compare studies</span></button>
+      </div>
+      <article id="single" aria-labelledby="study-name">
+        <div class="card-head"><div><p class="source-id" id="byline"></p><h2 id="study-name"></h2></div><div class="method-tags"><span id="route-tag" class="tag route"></span><span id="method-tag" class="tag"></span></div></div>
+        <div class="card-body">
+          <div class="result">
+            <h3 id="result-label">Tissue result</h3>
+            <div id="result-number" class="big" aria-live="polite"></div>
+            <p id="result-note"></p>
+            <div id="base-switch" class="seg" role="group" aria-label="Choose patient denominator"><button id="sampled" type="button">Patients sampled</button><button id="treated" type="button">All treated</button></div>
+            <div id="visual"></div>
+          </div>
+          <div class="evidence"><section><h3>How they checked</h3><p id="tissue"></p></section><section><h3>Dose-limiting effects</h3><p id="safety"></p></section><details id="nuance"><summary id="nuance-title"></summary><p id="detail"></p><span id="extra-source"></span></details></div>
+        </div>
+        <div class="card-foot"><a id="paper" class="paper" target="_blank" rel="noopener">Read the study <span aria-hidden="true">↗</span></a><button id="copy" class="text-button" type="button">Copy cited finding</button></div>
+        <div id="fallback" hidden><label for="fallback-text">Select and copy this cited finding</label><textarea id="fallback-text" readonly rows="4"></textarea></div>
+      </article>
+      <section id="comparison" aria-label="Study comparison" hidden>
+        <div class="compare-choose pick"><label for="peer">Compare with</label><div class="select-wrap"><select id="peer"></select></div></div>
+        <div id="pair"></div>
+        <p class="compare-note">Read each result within its own study. Direct injection tests persistence at the injection site. Delivery through a vein asks whether bacteria can reach a tumour from the bloodstream.</p>
+      </section>
+      <noscript><p>This explorer uses JavaScript. In Toso et al., 25 people received IV VNP20009. Three of the 18 patients listed in the tumour-culture table had a positive result. <a href="https://doi.org/10.1200/JCO.2002.20.1.142">Original study</a></p></noscript>
+    </section>
+    <section class="sources" id="sources"><details><summary>About the evidence <span aria-hidden="true"></span></summary>
+      <div class="scope"><p><strong>Why these studies?</strong> Neobe is preparing NEO22 for a first human trial. These seven selected reports on other products show how teams tested whether bacteria reached human tumours. Each result is specific to its route, assay and sampling time. <a href="https://www.cancerresearchhorizons.com/news-and-events/our-news/neobe-raises-68m-break-down-barriers-stop-cancer-treatments-working" target="_blank" rel="noopener">Neobe’s development plans ↗</a></p>
+      <p><strong>How to read the counts.</strong> Positive means at least one positive specimen per person for the stated test. A missing result contributes to the treated count only. DNA detection, signs on imaging and relative tissue enrichment answer different questions from a positive culture. The selection is illustrative and provides no estimate for NEO22.</p></div>
+      <ol id="source-list"></ol><a href="./human-studies.csv" download class="download">Download the evidence table (CSV) ↓</a>
+    </details></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>Built by <strong>Rounak Das</strong></span><a href="https://github.com/rounakdas07/tumour-reach" target="_blank" rel="noopener">GitHub ↗</a></div></footer>
+  <p id="status" class="sr" role="status"></p>
+</body>
+</html>
